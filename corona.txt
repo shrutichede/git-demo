@@ -1,0 +1,73 @@
+ pip install pandas
+ pip install plotly/dash
+import dash
+import pandas as pd
+import plotly.graph_objects as go
+
+
+
+
+import pandas as pd
+import numpy as np
+import plotly.graph_objects as go
+from dash import html
+from dash import dcc
+from dash.dependencies import Input, Output
+from flask import app
+
+patient=pd.read_csv('IndividualDetails.csv')
+total = patient.shape[0]
+active = patient[patient['current_status'] == 'Hospitalized'].shape[0]
+recovered = patient[patient['current_status'] == 'Recovered'].shape[0]
+deaths = patient[patient['current_status'] == 'Deceased'].shape[0]
+
+options = [
+    {'label': 'All', 'value': 'All'},
+    {'label': 'Hospitalized', 'value': 'Hospitalized'},
+    {'label': 'Recovered', 'value': 'Recovered'},
+    {'label': 'Deceased', 'value': 'Deceased'}
+]
+app=dash.dash()
+if __name__ == '__main__':
+    app.run()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
